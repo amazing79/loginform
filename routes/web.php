@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [MainController::class, 'index'])->name('main.index');
+Route::get('/register', [MainController::class, 'register'])->name('main.register');
+Route::post('/dashboard', [MainController::class, 'dashboard'])->name('main.dashboard');
+
