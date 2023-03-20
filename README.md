@@ -8,7 +8,7 @@ En esta rama (inicial) obtendremos el punto de partida para trabajar con el ejer
 
 ```
 Se quiere implementar la funcionalidad de registrarse como usuario del blog de la materia. Esto se harà siguiendo los 
-principios de TDD
+principios de TDD 
 ```
 
 Por cuestiones de simplicidad, se eligio el framework de Laravel para el desarrollo del sitio, ya que el framework 
@@ -22,9 +22,9 @@ Para instalar el proyecto, es necesario contar con lo siguiente:
 Una vez completado los requisitos, deberemos hacer lo siguiente.
 
 1. Clonar el proyecto
-2. Ejecutar composer install (esto nos instalara las dependencias de laravel, entre otras)
+2. Ejecutar comando ```composer install``` (esto nos instalara las dependencias de laravel, entre otras)
 3. Con laravel ya instalado, en la carpeta raiz del proyecto, crear el archivo .env
 4. Luego, generar el AppKey con el siguiente comando ```php artisan key:generate```
 5. Para poder acceder a nuestra app, correr el comando ```php artisan serve```. Esto levantara un servidor en localhost en puerto 8000.
 
-Desde el navegador, ya podremos acceder a nuestra app.
+Abrir el navegador con url indicada y ya podremos acceder a nuestra app.
