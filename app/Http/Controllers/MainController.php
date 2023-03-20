@@ -29,11 +29,19 @@ class MainController extends Controller
        $mail = $request->get('mail');
        $password = $request->get('password');
        $confirmPassword = $request->get('confirPassword');
+       try{
 
-       $users = [];
-       $users[] = $nombre .'-'. $mail. '-'.$password;
-       $result['message'] = 'Usuario registrado con exito';
-       $result['http_status'] = 200;
+           if(empty(trim($nombre))) {
+               throw new \InvalidArgumentException('El nombre del usuario no puede ser vacio');
+           }
+           $users = [];
+           $users[] = $nombre .'-'. $mail. '-'.$password;
+           $result['message'] = 'Usuario registrado con exito';
+           $result['http_status'] = 200;
+       } catch ( \InvalidArgumentException|\Exception $e) {
+           $result['message'] = 'Ocurrió un error al registrar el usuario: ' . $e->getMessage();
+           $result['http_status'] = 400;
+       }
 
        return response($result['message'], $result['http_status']);
 

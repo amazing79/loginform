@@ -23,4 +23,21 @@ class RegisterUserTest extends TestCase
         $response = $this->post('/register/add', $formValues);
         $response->assertStatus(200);
     }
+
+    /**
+     * @return void
+     * Paso 1: Refactorizar tests para cumplir Criterios de aceptacion
+     * El siguiente tests tiene como objetivo refactorizar la funcionalidad ya que no realiza chequeos, como por
+     * ejemplo, el nombre en blanco
+     */
+    public function testCantRegisterUserWithEmptyName():void
+    {
+        $formValues = [];
+        $formValues['nombre'] = '';
+        $formValues['mail'] = 'mimail@gmail.com';
+        $formValues['password'] = 'tricampeon2022';
+        $formValues['confirmPassord'] = 'tricampeon2022';
+        $response = $this->post('/register/add', $formValues);
+        $response->assertStatus(400);
+    }
 }
