@@ -4,7 +4,7 @@ El siguiente proyecto tiene como objetivo servir de ejemplo como una introducci√
 mediante un ejercicio sencillo, los pasos a seguir para trabajar con Desarrollo guiado por pruebas o su nombre en ingles
 Test Driven Development (TDD)
 
-En esta rama (inicial) obtendremos el punto de partida para trabajar con el ejercicio. Se propone lo siguiente:
+En esta rama (desarrollo) tendremos el ejercicio terminado para ser usado como guia. En el mismo se trabajo en lo siguiente:
 
 ```
 Se quiere implementar la funcionalidad de registrarse como usuario del blog de la materia. Esto se har√† siguiendo los 
