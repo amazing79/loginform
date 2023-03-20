@@ -56,4 +56,29 @@ class RegisterUserTest extends TestCase
         $response = $this->post('/register/add', $formValues);
         $response->assertStatus(400);
     }
+
+    /**
+     * @return void
+     * Paso 3: Refactorizar tests para cumplir Criterios de aceptacion
+     * Continuando con los criterios de aceptacion, se controlo que los password no puedan ser vacios.
+     */
+    public function testCantRegisterUserWithEmptyPasswords():void
+    {
+        // Chequeamos que el password no se vacio
+        $formValues = [];
+        $formValues['nombre'] = 'Ignacio Jauregui';
+        $formValues['mail'] = 'mimail@gmail.com';
+        $formValues['password'] = '';
+        $formValues['confirmPassord'] = 'tricampeon2022';
+        $response = $this->post('/register/add', $formValues);
+        $response->assertStatus(400);
+        // ahora verificamos que la confirmacion de password no sea vacia
+        $formValues = [];
+        $formValues['nombre'] = 'Ignacio Jauregui';
+        $formValues['mail'] = 'mimail@gmail.com';
+        $formValues['password'] = 'tricampeon2022';
+        $formValues['confirmPassord'] = '';
+        $response = $this->post('/register/add', $formValues);
+        $response->assertStatus(400);
+    }
 }
