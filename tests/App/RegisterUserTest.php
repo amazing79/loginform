@@ -36,7 +36,7 @@ class RegisterUserTest extends TestCase
         $formValues['nombre'] = '';
         $formValues['mail'] = 'mimail@gmail.com';
         $formValues['password'] = 'tricampeon2022';
-        $formValues['confirmPassord'] = 'tricampeon2022';
+        $formValues['confirmPassword'] = 'tricampeon2022';
         $response = $this->post('/register/add', $formValues);
         $response->assertStatus(400);
     }
@@ -52,7 +52,7 @@ class RegisterUserTest extends TestCase
         $formValues['nombre'] = 'Ignacio Jauregui';
         $formValues['mail'] = '';
         $formValues['password'] = 'tricampeon2022';
-        $formValues['confirmPassord'] = 'tricampeon2022';
+        $formValues['confirmPassword'] = 'tricampeon2022';
         $response = $this->post('/register/add', $formValues);
         $response->assertStatus(400);
     }
@@ -69,7 +69,7 @@ class RegisterUserTest extends TestCase
         $formValues['nombre'] = 'Ignacio Jauregui';
         $formValues['mail'] = 'mimail@gmail.com';
         $formValues['password'] = '';
-        $formValues['confirmPassord'] = 'tricampeon2022';
+        $formValues['confirmPassword'] = 'tricampeon2022';
         $response = $this->post('/register/add', $formValues);
         $response->assertStatus(400);
         // ahora verificamos que la confirmacion de password no sea vacia
@@ -77,7 +77,23 @@ class RegisterUserTest extends TestCase
         $formValues['nombre'] = 'Ignacio Jauregui';
         $formValues['mail'] = 'mimail@gmail.com';
         $formValues['password'] = 'tricampeon2022';
-        $formValues['confirmPassord'] = '';
+        $formValues['confirmPassword'] = '';
+        $response = $this->post('/register/add', $formValues);
+        $response->assertStatus(400);
+    }
+
+    /**
+     * @return void
+     * Paso 4: Refactorizar tests para cumplir Criterios de aceptacion
+     * Continuando con los criterios de aceptacion, se controlo que los password deben coincidir.
+     */
+    public function testCantRegisterUserIfPasswordsNotMatch():void
+    {
+        $formValues = [];
+        $formValues['nombre'] = 'Ignacio Jauregui';
+        $formValues['mail'] = 'mimail@gmail.com';
+        $formValues['password'] = 'bicampeon2022';
+        $formValues['confirmPassword'] = 'tricampeon2022';
         $response = $this->post('/register/add', $formValues);
         $response->assertStatus(400);
     }
