@@ -21,4 +21,21 @@ class MainController extends Controller
     {
         return View('pages.dashboard');
     }
+
+    function add(Request $request)
+    {
+       $result=[];
+       $nombre = $request->get('nombre');
+       $mail = $request->get('mail');
+       $password = $request->get('password');
+       $confirmPassword = $request->get('confirPassword');
+
+       $users = [];
+       $users[] = $nombre .'-'. $mail. '-'.$password;
+       $result['message'] = 'Usuario registrado con exito';
+       $result['http_status'] = 200;
+
+       return response($result['message'], $result['http_status']);
+
+    }
 }

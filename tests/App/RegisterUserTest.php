@@ -15,7 +15,12 @@ class RegisterUserTest extends TestCase
 
     public function testRegisterNewUser():void
     {
-        $response = $this->post('/register/add');
+        $formValues = [];
+        $formValues['nombre'] = 'Ignacio Jauregui';
+        $formValues['mail'] = 'mimail@gmail.com';
+        $formValues['password'] = 'tricampeon2022';
+        $formValues['confirmPassord'] = 'tricampeon2022';
+        $response = $this->post('/register/add', $formValues);
         $response->assertStatus(200);
     }
 }

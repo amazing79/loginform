@@ -17,4 +17,5 @@ use App\Http\Controllers\MainController;
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/register', [MainController::class, 'register'])->name('main.register');
 Route::post('/dashboard', [MainController::class, 'dashboard'])->name('main.dashboard');
+Route::post('/register/add', [MainController::class, 'add'])->name('main.register.add');
 
