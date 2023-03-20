@@ -17,9 +17,11 @@
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
             <h2>Complete el formulario</h2>
-            <form class="p-4 p-md-5 border rounded-3 bg-light">
+            <form class="p-4 p-md-5 border rounded-3 bg-light" action="{{route('main.register.add')}}" method="post">
+                @csrf
+                @method('post')
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Nombre" name="nombre">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" name="nombre">
                     <label for="floatingInput">Nombre</label>
                 </div>
                 <div class="form-floating mb-3">
