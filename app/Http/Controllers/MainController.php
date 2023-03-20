@@ -42,6 +42,10 @@ class MainController extends Controller
                throw new \InvalidArgumentException('Debe ingresar su password y/o confirmacion de password');
            }
 
+           if(trim($password) != trim($confirmPassword)) {
+               throw new \InvalidArgumentException('Las passwords ingresadas no coinciden');
+           }
+
            $users = [];
            $users[] = $nombre .'-'. $mail. '-'.$password;
            $result['message'] = 'Usuario registrado con exito';
