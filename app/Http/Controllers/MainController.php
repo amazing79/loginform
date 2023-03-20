@@ -34,6 +34,10 @@ class MainController extends Controller
            if(empty(trim($nombre))) {
                throw new \InvalidArgumentException('El nombre del usuario no puede ser vacio');
            }
+
+           if(empty(trim($mail))) {
+               throw new \InvalidArgumentException('Debe ingresar una direccion de mail');
+           }
            $users = [];
            $users[] = $nombre .'-'. $mail. '-'.$password;
            $result['message'] = 'Usuario registrado con exito';
