@@ -28,3 +28,14 @@ Una vez completado los requisitos, deberemos hacer lo siguiente.
 5. Para poder acceder a nuestra app, correr el comando ```php artisan serve```. Esto levantara un servidor en localhost en puerto 8000.
 
 Abrir el navegador con url indicada y ya podremos acceder a nuestra app.
+
+**Nota:** para correr los tests pueden conseguir un IDE como phpstorm o netbeans (con soporte de php) y usar el archivo de configurarion
+phpunit.xml 
+
+**Alternativa:** pueden correr los tests desde la linea de comandos, teniendo en cuenta lo siguiente:
+
+``path\to\php path\to\phpunit --configuration path\to\phpunit.xml ``
+
+Ejemplo:
+
+``"C:\Php\php.exe" D:/ids/proyectos/loginform/vendor/phpunit/phpunit/phpunit --configuration D:\ids\proyectos\loginform\phpunit.xml``
