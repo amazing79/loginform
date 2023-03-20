@@ -28,9 +28,8 @@ class MainController extends Controller
        $nombre = $request->get('nombre');
        $mail = $request->get('mail');
        $password = $request->get('password');
-       $confirmPassword = $request->get('confirPassword');
+       $confirmPassword = $request->get('confirmPassword');
        try{
-
            if(empty(trim($nombre))) {
                throw new \InvalidArgumentException('El nombre del usuario no puede ser vacio');
            }
@@ -38,6 +37,11 @@ class MainController extends Controller
            if(empty(trim($mail))) {
                throw new \InvalidArgumentException('Debe ingresar una direccion de mail');
            }
+
+           if(empty(trim($password)) || empty(trim($confirmPassword))) {
+               throw new \InvalidArgumentException('Debe ingresar su password y/o confirmacion de password');
+           }
+
            $users = [];
            $users[] = $nombre .'-'. $mail. '-'.$password;
            $result['message'] = 'Usuario registrado con exito';

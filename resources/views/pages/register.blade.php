@@ -31,7 +31,7 @@
                     <label for="floatingPassword">Password</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="confirPassword">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="confirmPassword">
                     <label for="floatingPassword">Repetir Password</label>
                 </div>
                 <div class="d-flex justify-content-between">

@@ -19,7 +19,7 @@ class RegisterUserTest extends TestCase
         $formValues['nombre'] = 'Ignacio Jauregui';
         $formValues['mail'] = 'mimail@gmail.com';
         $formValues['password'] = 'tricampeon2022';
-        $formValues['confirmPassord'] = 'tricampeon2022';
+        $formValues['confirmPassword'] = 'tricampeon2022';
         $response = $this->post('/register/add', $formValues);
         $response->assertStatus(200);
     }
